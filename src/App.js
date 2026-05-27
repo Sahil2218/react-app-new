@@ -6,19 +6,19 @@ const YOUR_NAME = 'Sahil D Chavan';
 
 const evidence = [
   {
-    icon: '🧸',
+    icon: '🦄',
     title: 'Exhibit A',
-    text: 'I remember the tiny things that make you smile... even if my calendar committed betrayal.'
+    text: 'A cuddly unicorn soft toy, because you deserve something cute, soft and magical just like your smile.'
   },
   {
-    icon: '💬',
+    icon: '💡',
     title: 'Exhibit B',
-    text: 'Your messages can turn an ordinary day into my favourite part of the week.'
+    text: 'An “I Love You” light sign, because even when my memory fails, my love for you should always stay glowing.'
   },
   {
-    icon: '🌷',
+    icon: '💑',
     title: 'Exhibit C',
-    text: 'I may have missed the date, but I never forget how lucky I am to have you.'
+    text: 'A couple statue, a tiny reminder of us and how much I treasure what we have together.'
   }
 ];
 
@@ -26,7 +26,7 @@ const caseFiles = [
   {
     title: 'Motive',
     label: 'Love, excessive amounts',
-    text: 'The suspect is completely, hopelessly and permanently in love with the victim.'
+    text: 'The suspect is completely, hopelessly and permanently in love with Shreya S Chavan.'
   },
   {
     title: 'Confession',
@@ -36,21 +36,22 @@ const caseFiles = [
   {
     title: 'Sentence',
     label: 'Lifetime of making it up',
-    text: 'Starting with flowers, hugs, a proper date and unlimited princess treatment.'
+    text: 'Starting with a unicorn, a glowing love sign, our little couple statue and unlimited princess treatment.'
   }
 ];
 
 const promises = [
-  'Flowers delivered with a very guilty face 🌷',
-  'A proper anniversary date planned by me 🍽️',
-  'A calendar reminder that will haunt me forever 📅',
-  'Extra cuddles, attention and kisses with interest 💗'
+  'A unicorn soft toy for my cutest girl 🦄',
+  'An “I Love You” light sign to keep my confession glowing 💡❤️',
+  'A couple statue to remind you of us, always 💑',
+  'Extra cuddles, attention and love with interest 💗'
 ];
 
 const apologyLines = [
   `Dear ${HER_NAME},`,
   'I really messed up today. Our anniversary is not just a date; it is a reminder of the beautiful thing we have together.',
   'I do not want to defend it or make excuses. I just want you to know that you are important to me every day, including the day my brain stupidly forgot to celebrate properly.',
+  'The unicorn, the glowing “I Love You” sign and the little couple statue are not enough to undo my mistake, but I hope they remind you how genuinely special you are to me.',
   'I forgot the calendar date, not the girl who made every date worth remembering.',
   'I am sorry, and I love you more than this criminal website can prove. ❤️'
 ];
@@ -157,8 +158,8 @@ function App() {
           <div className="badge">🚨 URGENT CASE FILE 🚨</div>
           <h1>The Anniversary<br /><span>Crime Scene</span></h1>
           <p className="hero-text">
-            A very serious offence has occurred. The suspect forgot the anniversary... but is prepared
-            to present overwhelming evidence of love.
+            A very serious offence has occurred. The suspect forgot the anniversary... but has brought
+            three carefully chosen pieces of evidence and one very honest apology.
           </p>
           <button className="primary-button" onClick={beginInvestigation}>
             Open the Case File 💌
@@ -184,7 +185,7 @@ function App() {
                 <p><strong>Victim:</strong> {HER_NAME}</p>
                 <p><strong>Suspect:</strong> {YOUR_NAME}, a stupid boy who loves her terribly</p>
                 <p><strong>Crime:</strong> Forgetting our anniversary</p>
-                <p><strong>Evidence:</strong> Immediate regret, flowers incoming, one very dramatic website</p>
+                <p><strong>Evidence:</strong> One unicorn soft toy, an “I Love You” light sign, a couple statue and one dramatic website</p>
                 <p className="verdict"><strong>Statement:</strong> I am sorry, {HER_NAME}. I truly am.</p>
               </div>
             </div>
@@ -210,12 +211,12 @@ function App() {
           <section className="section evidence-section">
             <div className="section-heading">
               <p>Collected Evidence</p>
-              <h2>Proof that you are everything to me</h2>
+              <h2>Three gifts from a guilty heart</h2>
             </div>
             <div className="evidence-grid">
               {evidence.map((item) => (
                 <article className="evidence-card" key={item.title}>
-                  <div className="photo-placeholder"><span>{item.icon}</span><small>Add our photo</small></div>
+                  <div className="photo-placeholder"><span>{item.icon}</span><small>Evidence secured</small></div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -247,7 +248,7 @@ function App() {
           <section className="section promise-section">
             <div className="section-heading">
               <p>Recovery Plan</p>
-              <h2>The official make-it-up sentence</h2>
+              <h2>The official make-it-up evidence</h2>
             </div>
             <div className="promise-list">
               {promises.map((promise) => (
