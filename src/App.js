@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 
-const HER_NAME = 'My Love';
-const YOUR_NAME = 'Your Guilty Boy';
+const HER_NAME = 'Shreya S Chavan';
+const YOUR_NAME = 'Sahil D Chavan';
 
 const evidence = [
   {
@@ -181,8 +181,8 @@ function App() {
                 <div className="stamp guilty">GUILTY</div>
               </div>
               <div className="report-details">
-                <p><strong>Victim:</strong> The sweetest girl in the world</p>
-                <p><strong>Suspect:</strong> A stupid boy who loves her terribly</p>
+                <p><strong>Victim:</strong> {HER_NAME}</p>
+                <p><strong>Suspect:</strong> {YOUR_NAME}, a stupid boy who loves her terribly</p>
                 <p><strong>Crime:</strong> Forgetting our anniversary</p>
                 <p><strong>Evidence:</strong> Immediate regret, flowers incoming, one very dramatic website</p>
                 <p className="verdict"><strong>Statement:</strong> I am sorry, {HER_NAME}. I truly am.</p>
