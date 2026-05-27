@@ -7,17 +7,26 @@ const YOUR_NAME = 'Sahil D Chavan';
 const evidence = [
   {
     icon: '🦄',
+    image: '/IMG_1312.jpeg',
+    alt: 'The unicorn soft toy gift for Shreya',
     title: 'Exhibit A',
+    gift: 'Unicorn Soft Toy',
     text: 'A cuddly unicorn soft toy, because you deserve something cute, soft and magical just like your smile.'
   },
   {
     icon: '💡',
+    image: '/IMG_8431.jpeg',
+    alt: 'The I Love You light sign gift for Shreya',
     title: 'Exhibit B',
+    gift: 'I Love You Light Sign',
     text: 'An “I Love You” light sign, because even when my memory fails, my love for you should always stay glowing.'
   },
   {
     icon: '💑',
+    image: '/IMG_8441.jpeg',
+    alt: 'The couple statue gift for Shreya',
     title: 'Exhibit C',
+    gift: 'Couple Statue',
     text: 'A couple statue, a tiny reminder of us and how much I treasure what we have together.'
   }
 ];
@@ -216,7 +225,10 @@ function App() {
             <div className="evidence-grid">
               {evidence.map((item) => (
                 <article className="evidence-card" key={item.title}>
-                  <div className="photo-placeholder"><span>{item.icon}</span><small>Evidence secured</small></div>
+                  <figure className="evidence-photo">
+                    <img src={item.image} alt={item.alt} loading="lazy" />
+                    <figcaption><span>{item.icon}</span>{item.gift}</figcaption>
+                  </figure>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
