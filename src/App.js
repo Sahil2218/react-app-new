@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 
 const HER_NAME = 'My Love';
@@ -93,13 +93,12 @@ function App() {
   const [noCount, setNoCount] = useState(0);
   const [forgiven, setForgiven] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const questionRef = useRef(null);
 
   const noTexts = [
     'No 😤',
     'Are you sure? 🥺',
     'Think again pls 😭',
-    'Look at the Yes button 👀',
+    'Look at Yes 👀',
     'Mercy, my lady 😩',
     'No is illegal now 🚫'
   ];
@@ -257,15 +256,14 @@ function App() {
             </div>
           </section>
 
-          <section className="question-section" ref={questionRef}>
+          <section className="question-section">
             <p className="final-tag">Final Verdict Required</p>
             <h2>Do you forgive this crime?</h2>
             <p className="question-copy">The accused is trembling while waiting for your judgment.</p>
             <div className="button-court">
               <button
-                className="yes-button"
+                className={`yes-button yes-level-${noCount}`}
                 onClick={acceptApology}
-                style={{ transform: `scale(${1 + noCount * 0.22})` }}
               >
                 Yes, I forgive you ❤️
               </button>
