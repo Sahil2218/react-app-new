@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background:
@@ -25,6 +29,10 @@ body {
   color: var(--text);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
 }
 
 .page {
@@ -63,6 +71,7 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 .hero-card::before {
@@ -101,7 +110,7 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(4rem, 8vw, 6.6rem);
+  font-size: clamp(3.3rem, 8vw, 6.6rem);
   line-height: 0.9;
   margin: 0;
 }
@@ -157,13 +166,7 @@ body {
   position: absolute;
   width: 140%;
   left: -20%;
-  background: repeating-linear-gradient(
-    45deg,
-    #ffd400,
-    #ffd400 18px,
-    #111 18px,
-    #111 36px
-  );
+  background: repeating-linear-gradient(45deg, #ffd400, #ffd400 18px, #111 18px, #111 36px);
   color: #111;
   font-weight: 800;
   padding: 14px 0;
@@ -193,7 +196,7 @@ body {
 }
 
 .section-heading h2 {
-  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
   margin: 10px 0 0;
 }
 
@@ -272,10 +275,6 @@ body {
   overflow: hidden;
 }
 
-.file-card {
-  transform: rotate(calc((var(--rotation, 0) * 1deg)));
-}
-
 .pin {
   position: absolute;
   top: 16px;
@@ -329,7 +328,7 @@ body {
 
 .envelope {
   position: relative;
-  width: 300px;
+  width: min(300px, 90vw);
   height: 210px;
   margin: 0 auto;
   border-radius: 18px;
@@ -412,6 +411,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--accent-soft);
+  flex-shrink: 0;
 }
 
 .question-section {
@@ -423,7 +423,7 @@ body {
 }
 
 .question-section h2 {
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.8rem, 6vw, 5rem);
   margin: 10px 0 18px;
 }
 
@@ -443,7 +443,19 @@ body {
   border-radius: 999px;
   font-size: 1rem;
   font-weight: 700;
+  max-width: 100%;
 }
+
+.yes-button {
+  transform-origin: center;
+}
+
+.yes-level-0 { transform: scale(1); }
+.yes-level-1 { transform: scale(1.08); }
+.yes-level-2 { transform: scale(1.16); }
+.yes-level-3 { transform: scale(1.22); }
+.yes-level-4 { transform: scale(1.28); }
+.yes-level-5 { transform: scale(1.32); }
 
 .no-button,
 .secondary-button {
@@ -467,6 +479,7 @@ body {
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: var(--shadow);
   z-index: 100;
+  max-width: calc(100vw - 40px);
 }
 
 .floating-layer {
@@ -523,7 +536,7 @@ body {
 }
 
 .celebration-card h1 {
-  font-size: clamp(3.4rem, 7vw, 5.6rem);
+  font-size: clamp(3rem, 7vw, 5.6rem);
   margin: 18px 0;
 }
 
@@ -546,27 +559,89 @@ body {
   .letter,
   .question-section,
   .celebration-card {
-    padding: 30px;
+    padding: 28px 22px;
+    border-radius: 28px;
+  }
+
+  .hero {
+    padding: 120px 16px 80px;
+  }
+
+  .hero-text,
+  .report-details,
+  .promise,
+  .letter p {
+    font-size: 0.97rem;
   }
 
   .report-card {
     grid-template-columns: 1fr;
   }
 
-  .hero {
-    padding-top: 140px;
+  .fingerprint {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
   }
 
   .police-tape {
-    font-size: 10px;
+    font-size: 9px;
+    letter-spacing: 0.18em;
   }
 
   .button-court {
     flex-direction: column;
+    gap: 18px;
   }
 
   .yes-button,
-  .no-button {
+  .no-button,
+  .secondary-button {
     width: 100%;
+    font-size: 0.95rem;
+    padding: 16px 18px;
+  }
+
+  .yes-level-0,
+  .yes-level-1,
+  .yes-level-2,
+  .yes-level-3,
+  .yes-level-4,
+  .yes-level-5 {
+    transform: scale(1) !important;
+  }
+
+  .toast {
+    right: 16px;
+    left: 16px;
+    bottom: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-card {
+    padding-top: 38px;
+  }
+
+  .hero h1 {
+    line-height: 1;
+  }
+
+  .section {
+    padding: 48px 16px;
+  }
+
+  .question-section {
+    width: calc(100% - 20px);
+    padding: 26px 16px;
+  }
+
+  .photo-placeholder {
+    height: 180px;
+  }
+
+  .celebration-card {
+    padding: 32px 18px;
   }
 }
